@@ -16,7 +16,7 @@ final class ViewModel {
     }
     
     public var setDeadlineViewContoller: UIViewController? {
-        SetDeadlineViewController(title: "목표만들기 - 날짜 선택")
+        SetDeadlineViewController(title: "목표만들기 - 마감 날짜 선택")
     }
     
     // MARK: - Methods

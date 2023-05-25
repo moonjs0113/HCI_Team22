@@ -9,6 +9,8 @@ import UIKit
 
 extension UIColor {
     static let mainColor: UIColor = .init(named: "MainColor") ?? .init()
+    static let calendarBackground: UIColor = .init(named: "CalendarBackground") ?? .init()
+    static let disenabledButtonBackground: UIColor = .init(named: "DisenabledButtonBackground") ?? .init()
 }
 
 

@@ -164,6 +164,10 @@ class BaseViewController: UIViewController {
         }
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    func popToRootViewController() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 
     
     // MARK: - Objc-C Method

@@ -81,12 +81,13 @@ final class ViewController: BaseViewController {
             return layout
         }()
         
-        let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
-        view.showsVerticalScrollIndicator = false
-        view.showsHorizontalScrollIndicator = false
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.clipsToBounds = false
-        return view
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.clipsToBounds = false
+        GoalCollectionViewCell.registerWithCollectionViewFromNib(collectionView)
+        return collectionView
     }()
     
     // MARK: - UI Methods
@@ -104,7 +105,7 @@ final class ViewController: BaseViewController {
             imageView.heightAnchor.constraint(equalTo: imageViewBackgroundView.heightAnchor),
             imageView.widthAnchor.constraint(equalTo: imageViewBackgroundView.widthAnchor),
             
-            imageViewBackgroundView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: .layoutConstant(1)),
+            imageViewBackgroundView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: .layoutConstant(2)),
             imageViewBackgroundView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 1/3),
             imageViewBackgroundView.heightAnchor.constraint(equalTo: imageViewBackgroundView.widthAnchor),
             imageViewBackgroundView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -168,6 +169,10 @@ final class ViewController: BaseViewController {
             .store(in: &anyCancellable)
     }
     
+    private func fetchCollectionView() {
+//        goalCollectionView.reloadData()
+    }
+    
     // MARK: - Objc-C Methods
     
     // MARK: - IBOutlets
@@ -182,12 +187,14 @@ final class ViewController: BaseViewController {
         viewBinding()
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad(self)
     }
 
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchCollectionView()
+    }
 }
 
