@@ -23,6 +23,8 @@ final class ViewModel {
     func fetchUI(_ view: ViewController) {
         view.imageView.getImageFromURL(userData.avatarURL)
         view.nickNameLabel.text = userData.name
+        
+        view.commitLabel.text = 
 //        view.idLabel.text = "@\(userData.id)"
     }
     

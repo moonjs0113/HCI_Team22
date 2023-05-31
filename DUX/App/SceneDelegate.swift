@@ -30,6 +30,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             : LoginViewController(title: "")
                 .changeClossButtonType()
         }()
+//        let rootViewController: UIViewController = {
+//            homeViewController
+//
+//        }()
         let rootNavigationViewController = UINavigationController(rootViewController: rootViewController)
         window?.rootViewController = rootNavigationViewController
         window?.makeKeyAndVisible()
