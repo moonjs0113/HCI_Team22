@@ -59,5 +59,16 @@ extension GithubAPI {
             let route = "https://api.github.com/user"
             requestManager.requestGET(route: route, completeHandler: completeHandler)
         }
+        
+        static func requestRepoInfo(completeHandler: @escaping GenericClosure<ReposDTO>) {
+            let route = "https://api.github.com/user/repos"
+            requestManager.requestGET(route: route, completeHandler: completeHandler)
+        }
+        
+        static func requestCommitInfo(userName: String, repoName: String, completeHandler: @escaping GenericClosure<AllCommitDTO>) {
+            let route = "https://api.github.com/repos/"+userName+"/"+repoName+"/stats/participation"
+            
+            requestManager.requestGET(route: route, completeHandler: completeHandler)
+        }
     }
 }
