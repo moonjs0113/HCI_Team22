@@ -60,11 +60,14 @@ extension RequestManager {
     ) {
         self.session.dataTask(with: request) { [weak self] responseData, response, error in
             guard let responseData = responseData, error == nil else {
+                
                 self?.showErrorAlertController(error: .nilResponse)
                 return
             }
             
             do {
+                print("------")
+                print(responseData)
                 print(responseData.prettyPrintedJSONString)
                 let data = try JSONDecoder().decode(D.self, from: responseData)
                 DispatchQueue.main.async {

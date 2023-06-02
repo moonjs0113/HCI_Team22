@@ -52,6 +52,26 @@ final class ViewController: BaseViewController {
         label.font = .systemFont(ofSize: 12, weight: .regular)
         return label
     }()
+    // new CommitLabel
+    let commitLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "commit label is here"
+        label.textColor = .darkGray
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 12, weight: .regular)
+        return label
+    }()
+    
+    let tierLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "GOLD"
+        label.textColor = .yellow
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        return label
+    }()
     
     let activityLabel: UILabel = {
         let label = UILabel()
@@ -119,7 +139,23 @@ final class ViewController: BaseViewController {
             nickNameLabel.topAnchor.constraint(equalTo: imageViewBackgroundView.bottomAnchor, constant: .layoutConstant()),
         ])
         
-
+        view.addSubview(tierLabel)
+        NSLayoutConstraint.activate([
+            tierLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            tierLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .layoutConstant()),
+            tierLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: .layoutConstant().minus),
+            tierLabel.topAnchor.constraint(equalTo: nickNameLabel.bottomAnchor, constant: .layoutConstant()),
+        ])
+        
+        view.addSubview(commitLabel)
+        NSLayoutConstraint.activate([
+            commitLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            commitLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .layoutConstant()),
+            commitLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: .layoutConstant().minus),
+            commitLabel.topAnchor.constraint(equalTo: tierLabel.bottomAnchor, constant: .layoutConstant()),
+        ])
+        
+        
 //        view.addSubview(idLabel)
 //        NSLayoutConstraint.activate([
 //            idLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
