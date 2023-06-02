@@ -73,7 +73,8 @@ extension RequestManager {
                 DispatchQueue.main.async {
                     completeHandler(data)
                 }
-            } catch (_) {
+            } catch (let e) {
+                debugPrint(e)
                 self?.showErrorAlertController(error: .errorDecodingJson)
             }
         }

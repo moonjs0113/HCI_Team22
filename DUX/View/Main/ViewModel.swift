@@ -42,15 +42,12 @@ final class ViewModel {
     public func viewDidLoad(_ viewController: ViewController) {
         GithubAPI.Login.requestUserInfo {
             self.userData = $0.data
-            
-            
             GithubAPI.Login.requestRepoInfo {
                 $0.map({
                     GithubAPI.Login.requestCommitInfo(userName: self.userData.name, repoName: $0.name!) {
                         self.commitData += $0.data.owner.reduce(0, +)
                         self.fetchUI(viewController)
                     }
-                    
                 })
             }
         }

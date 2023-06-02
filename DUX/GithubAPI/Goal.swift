@@ -7,21 +7,14 @@
 
 import Foundation
 
-struct Goal {
-    var deadline: DateComponents
+struct Goal: Codable {
+    var startDay: String
+    var deadline: String
     var count: Int
     var type: GoalType = .commit
-    
-//    var previewData: [Goal] {
-//        [
-//            .init(deadline: .now, count: 10, type: .commit),
-//            .init(deadline: .now, count: 3, type: .commit),
-//            .init(deadline: .now, count: 7, type: .commit),
-//        ]
-//    }
 }
 
-enum GoalType {
+enum GoalType: Codable {
     case commit
     case pullRequest
     case issue

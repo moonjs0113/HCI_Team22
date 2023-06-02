@@ -97,7 +97,7 @@ final class ViewController: BaseViewController {
             let layout = UICollectionViewFlowLayout()
             layout.scrollDirection = .horizontal
             layout.minimumInteritemSpacing = 8.0
-            layout.itemSize = .init(width: 200, height: 168)
+            layout.itemSize = .init(width: 200, height: 160)
             return layout
         }()
         
@@ -174,9 +174,9 @@ final class ViewController: BaseViewController {
         view.addSubview(makeGoalButton)
         NSLayoutConstraint.activate([
             makeGoalButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: .layoutConstant().minus),
-            makeGoalButton.bottomAnchor.constraint(equalTo: goalCollectionView.topAnchor, constant: .layoutConstant(1)),
+            makeGoalButton.bottomAnchor.constraint(equalTo: goalCollectionView.topAnchor, constant: .layoutConstant(2).minus),
             
-            collectionViewTitleLabel.bottomAnchor.constraint(equalTo: goalCollectionView.topAnchor, constant: .layoutConstant(1)),
+            collectionViewTitleLabel.bottomAnchor.constraint(equalTo: goalCollectionView.topAnchor, constant: .layoutConstant(2).minus),
             collectionViewTitleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .layoutConstant()),
             
             goalCollectionView.heightAnchor.constraint(equalToConstant: .layoutConstant(40)), // 160
@@ -184,6 +184,8 @@ final class ViewController: BaseViewController {
             goalCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: .layoutConstant()),
             goalCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: .layoutConstant().minus),
         ])
+        goalCollectionView.dataSource = self
+        goalCollectionView.delegate = self
     }
     
     // MARK: - Methods
@@ -206,7 +208,7 @@ final class ViewController: BaseViewController {
     }
     
     private func fetchCollectionView() {
-//        goalCollectionView.reloadData()
+        goalCollectionView.reloadData()
     }
     
     // MARK: - Objc-C Methods
@@ -231,6 +233,7 @@ final class ViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchCollectionView()
+        print(PersistenceManager.shared.getGoals())
     }
 }
 
