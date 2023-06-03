@@ -11,6 +11,7 @@ final class SetGoalViewController: BaseViewController {
     // MARK: - Properties
     var selectedDateComponent: DateComponents?
     var selectedCount: Int = 1
+    
     // MARK: - UI Properties
     private let nextButton: UIButton = {
         let button = UIButton(type: .system)
@@ -98,8 +99,13 @@ final class SetGoalViewController: BaseViewController {
         guard let selectedDateComponent = selectedDateComponent else {
             return
         }
-        let goal = Goal(deadline: selectedDateComponent, count: selectedCount)
-//        PersistenceManager.shared.saveGoal(value: goal)
+        let todayDateComponent = Calendar.current.dateComponents([.year,.month,.day], from: .now)
+        let goal = Goal(
+            startDay: todayDateComponent.toString,
+            deadline: selectedDateComponent.toString,
+            count: selectedCount
+        )
+        PersistenceManager.shared.saveGoal(value: goal)
         self.popToRootViewController()
     }
     // MARK: - Objc-C Methods

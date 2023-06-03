@@ -10,7 +10,7 @@ import Foundation
 // MARK: - WelcomeElement
 struct WelcomeElement: Codable {
     let keysURL, statusesURL, issuesURL: String?
-    let license: JSONNull?
+//    let license: JSONNull?
     let issueEventsURL: String?
     let hasProjects: Bool?
     let id: Int?
@@ -78,7 +78,7 @@ struct WelcomeElement: Codable {
         case keysURL
         case statusesURL
         case issuesURL
-        case license
+//        case license
         case issueEventsURL
         case hasProjects
         case id

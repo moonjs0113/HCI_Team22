@@ -54,14 +54,15 @@ final class GoalCollectionViewCell: UICollectionViewCell {
         self.data = data
         countLabel.text = "1/\(data.count)"
         
-        if let deadlineDate = data.deadline.date {
-            let distanceDay = Calendar.current.dateComponents([.day], from: deadlineDate, to: .now).day ?? 0
-            dDayLabel.text = "D-\(distanceDay)"
+        let dateComponents = data.deadline.toDateComponents
+        if let deadlineDate = dateComponents.date {
+            let distanceDay = Calendar.current.dateComponents([.day], from: .now, to: deadlineDate).day ?? 0
+            dDayLabel.text = (distanceDay > 0) ? "D-\(distanceDay)" : "D-Day"
         }
         
-        if let year = data.deadline.year,
-           let month = data.deadline.month,
-           let day = data.deadline.day {
+        if let year = dateComponents.year,
+           let month = dateComponents.month,
+           let day = dateComponents.day {
             deadlineLabel.text = "마감일: \(year)년 \(month)월 \(day)일"
         }
     }
@@ -74,11 +75,6 @@ final class GoalCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var deadlineLabel: UILabel!
     
     // MARK: - IBActions
-    
-    
-
-    
-    
     
     // MARK: - Life Cycles
     override func awakeFromNib() {

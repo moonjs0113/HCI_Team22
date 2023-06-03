@@ -10,6 +10,8 @@
 		78AAB51E2A283C8200A93491 /* AllCommit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAB51D2A283C8200A93491 /* AllCommit.swift */; };
 		78AAB5202A284EFA00A93491 /* Repos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAB51F2A284EFA00A93491 /* Repos.swift */; };
 		78AAB5222A284F5A00A93491 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78AAB5212A284F5A00A93491 /* Repo.swift */; };
+		C7475BD82A29C31B00BFAB28 /* DateComponents+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7475BD72A29C31B00BFAB28 /* DateComponents+Extension.swift */; };
+		C7475BDA2A29C33100BFAB28 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7475BD92A29C33100BFAB28 /* String+Extension.swift */; };
 		C74995312A1F006200AA2251 /* ViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74995302A1F006200AA2251 /* ViewController+Extension.swift */; };
 		C7926EE52A1498D700AD708C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7926EE42A1498D700AD708C /* AppDelegate.swift */; };
 		C7926EE72A1498D700AD708C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7926EE62A1498D700AD708C /* SceneDelegate.swift */; };
@@ -52,6 +54,8 @@
 		78AAB51D2A283C8200A93491 /* AllCommit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCommit.swift; sourceTree = "<group>"; };
 		78AAB51F2A284EFA00A93491 /* Repos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repos.swift; sourceTree = "<group>"; };
 		78AAB5212A284F5A00A93491 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		C7475BD72A29C31B00BFAB28 /* DateComponents+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateComponents+Extension.swift"; sourceTree = "<group>"; };
+		C7475BD92A29C33100BFAB28 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		C74995302A1F006200AA2251 /* ViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extension.swift"; sourceTree = "<group>"; };
 		C7926EE12A1498D700AD708C /* DUX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DUX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7926EE42A1498D700AD708C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,7 +218,9 @@
 				C7C3A7502A1C3A770076C829 /* UIView+Extension.swift */,
 				C7FFBEC22A1CEC2C002C63E2 /* UIImageView+Extension.swift */,
 				C7C3A7522A1C3FCE0076C829 /* Data+Extension.swift */,
+				C7475BD72A29C31B00BFAB28 /* DateComponents+Extension.swift */,
 				C7C3A7552A1C43930076C829 /* UIApplication+Extension.swift */,
+				C7475BD92A29C33100BFAB28 /* String+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -355,10 +361,12 @@
 				78AAB5202A284EFA00A93491 /* Repos.swift in Sources */,
 				C7926F082A14AC0100AD708C /* ViewModel.swift in Sources */,
 				C7FFBEC12A1CEA27002C63E2 /* CGFloat+Extension.swift in Sources */,
+				C7475BD82A29C31B00BFAB28 /* DateComponents+Extension.swift in Sources */,
 				C7FFBECD2A1DB035002C63E2 /* GoalCollectionViewCell.swift in Sources */,
 				C7926F002A14A6A600AD708C /* BaseViewController.swift in Sources */,
 				78AAB51E2A283C8200A93491 /* AllCommit.swift in Sources */,
 				C7C3A7532A1C3FCE0076C829 /* Data+Extension.swift in Sources */,
+				C7475BDA2A29C33100BFAB28 /* String+Extension.swift in Sources */,
 				C7FFBECA2A1DAF7E002C63E2 /* Goal.swift in Sources */,
 				C7C3A75C2A1C4A190076C829 /* SettingViewController+Extension.swift in Sources */,
 			);

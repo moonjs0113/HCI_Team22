@@ -30,16 +30,19 @@ final class PersistenceManager {
     
     // USER GOAL
     func saveGoal(value: Goal) {
-        if var goalList = getGoals() {
-            goalList.append(value)
-            uds.set(goalList, forKey: Key.goals.rawValue)
-        } else {
-            uds.set([value], forKey: Key.goals.rawValue)
+        var goalList: [Goal] = getGoals() ?? []
+        goalList.append(value)
+        guard let data = try? PropertyListEncoder().encode(goalList) else {
+            return
         }
+        uds.set(data, forKey: Key.goals.rawValue)
     }
     
     func getGoals() -> [Goal]? {
-        uds.value(forKey: Key.goals.rawValue) as? [Goal]
+        guard let data = uds.data(forKey: Key.goals.rawValue) else {
+            return nil
+        }
+        return try? PropertyListDecoder().decode([Goal].self, from: data)
     }
     
     init() {
