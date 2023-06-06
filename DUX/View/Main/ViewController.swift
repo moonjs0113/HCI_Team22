@@ -233,7 +233,20 @@ final class ViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         fetchCollectionView()
-        print(PersistenceManager.shared.getGoals())
+        
+        self.view
+            .publisher(type: .tap)
+            .sink { [weak self] _ in
+                let imageViewController = LockScreenViewController()
+                imageViewController.modalPresentationStyle = .overFullScreen
+                let transition = CATransition()
+                transition.duration = 0.3
+                transition.type = CATransitionType.moveIn
+                transition.subtype = CATransitionSubtype.fromBottom
+                self?.view.window!.layer.add(transition, forKey: kCATransition)
+                self?.present(imageViewController, animated: false, completion: nil)
+            }
+            .store(in: &anyCancellable)
     }
 }
 

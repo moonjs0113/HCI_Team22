@@ -38,6 +38,7 @@
 		C7C3A7582A1C447E0076C829 /* WindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3A7572A1C447E0076C829 /* WindowManager.swift */; };
 		C7C3A75A2A1C49C70076C829 /* SettingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3A7592A1C49C70076C829 /* SettingType.swift */; };
 		C7C3A75C2A1C4A190076C829 /* SettingViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C3A75B2A1C4A190076C829 /* SettingViewController+Extension.swift */; };
+		C7C7C7932A2E8DA0005E3129 /* LockScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7C7C7922A2E8DA0005E3129 /* LockScreenViewController.swift */; };
 		C7FFBEBB2A1CE56F002C63E2 /* RequestManager+Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FFBEBA2A1CE56F002C63E2 /* RequestManager+Result.swift */; };
 		C7FFBEBD2A1CE582002C63E2 /* RequestManager+Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FFBEBC2A1CE582002C63E2 /* RequestManager+Generic.swift */; };
 		C7FFBEBF2A1CE753002C63E2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7FFBEBE2A1CE753002C63E2 /* User.swift */; };
@@ -84,6 +85,7 @@
 		C7C3A7572A1C447E0076C829 /* WindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowManager.swift; sourceTree = "<group>"; };
 		C7C3A7592A1C49C70076C829 /* SettingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingType.swift; sourceTree = "<group>"; };
 		C7C3A75B2A1C4A190076C829 /* SettingViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingViewController+Extension.swift"; sourceTree = "<group>"; };
+		C7C7C7922A2E8DA0005E3129 /* LockScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenViewController.swift; sourceTree = "<group>"; };
 		C7FFBEBA2A1CE56F002C63E2 /* RequestManager+Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestManager+Result.swift"; sourceTree = "<group>"; };
 		C7FFBEBC2A1CE582002C63E2 /* RequestManager+Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestManager+Generic.swift"; sourceTree = "<group>"; };
 		C7FFBEBE2A1CE753002C63E2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				C7926F0E2A14ADB000AD708C /* Setting */,
 				C7926F062A14ABF800AD708C /* Main */,
 				C7FFBEC82A1DAA54002C63E2 /* SetGoal */,
+				C7C7C7922A2E8DA0005E3129 /* LockScreenViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C74995312A1F006200AA2251 /* ViewController+Extension.swift in Sources */,
+				C7C7C7932A2E8DA0005E3129 /* LockScreenViewController.swift in Sources */,
 				C7FFBEBF2A1CE753002C63E2 /* User.swift in Sources */,
 				C7FFBEBB2A1CE56F002C63E2 /* RequestManager+Result.swift in Sources */,
 				C7FFBEC32A1CEC2C002C63E2 /* UIImageView+Extension.swift in Sources */,
